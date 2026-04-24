@@ -154,41 +154,38 @@ function setupScrollAnimations() {
         // Counter animation for stat numbers
         const statNumber = item.querySelector('.stat-number');
         if (statNumber) {
-            const text = statNumber.textContent.trim();
-            const isPercentage = text.includes('%');
-            const hasPlus = text.includes('+');
+            const originalText = statNumber.textContent.trim();
             
-            // Extract the numeric value
-            let endValue = 0;
-            
-            if (isPercentage) {
-                endValue = 100;
-            } else if (hasPlus) {
-                // Extract number before the +
-                const match = text.match(/(\d+)/);
-                endValue = match ? parseInt(match[1]) : 10;
+            // Parse the target value
+            let targetValue = 0;
+            if (originalText.includes('%')) {
+                targetValue = 100;
+            } else if (originalText.includes('+')) {
+                targetValue = parseInt(originalText);
             } else {
-                // Try to parse as decimal
-                const match = text.match(/(\d+\.?\d*)/);
-                endValue = match ? parseFloat(match[1]) : 0;
+                targetValue = parseFloat(originalText);
             }
 
-            gsap.from({ value: 0 }, {
+            // Create a counter object
+            const counter = { value: 0 };
+            
+            gsap.to(counter, {
                 scrollTrigger: {
                     trigger: item,
                     start: 'top 85%',
                     toggleActions: 'play none none none'
                 },
-                value: endValue,
+                value: targetValue,
                 duration: 2,
+                snap: { value: 1 },
                 onUpdate: function() {
-                    const currentValue = this.targets()[0].value;
-                    if (isPercentage) {
-                        statNumber.textContent = Math.round(currentValue) + '%';
-                    } else if (text.includes('.')) {
-                        statNumber.textContent = currentValue.toFixed(1);
+                    const displayValue = Math.round(counter.value);
+                    if (originalText.includes('%')) {
+                        statNumber.textContent = displayValue + '%';
+                    } else if (originalText.includes('+')) {
+                        statNumber.textContent = displayValue + '+';
                     } else {
-                        statNumber.textContent = Math.round(currentValue) + (hasPlus ? '+' : '');
+                        statNumber.textContent = displayValue;
                     }
                 }
             });
