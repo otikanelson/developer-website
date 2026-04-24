@@ -496,12 +496,14 @@ body {
 }
 
 .project-logo {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
     margin-bottom: 0.75rem;
     transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
 }
 
 .project-card:hover .project-logo {
