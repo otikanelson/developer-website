@@ -87,6 +87,8 @@ function initializeAnimations() {
 
     // Animate highlights
     const highlights = document.querySelectorAll('.highlight');
+    // Ensure highlights are visible initially
+    gsap.set(highlights, { opacity: 1 });
     gsap.from(highlights, {
         scrollTrigger: {
             trigger: '.about-highlights',
