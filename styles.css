@@ -1193,13 +1193,13 @@ body::after {
 
     /* Hero Section Mobile */
     .hero {
-        padding: 140px 0;
+        padding: 20px 0;
         min-height: auto;
     }
 
     .hero .container {
         grid-template-columns: 1fr;
-        padding: 40px 32px;
+        padding: 0 32px;
         gap: 3rem;
     }
 
@@ -1280,6 +1280,12 @@ body::after {
     /* Projects Section Mobile */
     .projects {
         margin: 0px 0 120px;
+        padding: 120px 0;
+    }
+
+    .projects::before,
+    .projects::after {
+        display: none;
     }
 
     .masonry-grid {

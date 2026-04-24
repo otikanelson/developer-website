@@ -154,13 +154,17 @@ function setupScrollAnimations() {
         // Counter animation for stat numbers
         const statNumber = item.querySelector('.stat-number');
         if (statNumber) {
-            const text = statNumber.textContent;
+            const text = statNumber.textContent.trim();
             const isPercentage = text.includes('%');
-            const isDecimal = text.includes('.');
+            const hasPlus = text.includes('+');
             
-            let endValue = parseFloat(text);
+            // Extract the numeric value by removing non-numeric characters except decimal point
+            let numericText = text.replace(/[^0-9.]/g, '');
+            let endValue = parseFloat(numericText);
+            
+            // Handle edge cases
+            if (isNaN(endValue)) endValue = 0;
             if (isPercentage) endValue = 100;
-            if (isDecimal) endValue = 10;
 
             gsap.from({ value: 0 }, {
                 scrollTrigger: {
@@ -171,12 +175,13 @@ function setupScrollAnimations() {
                 value: endValue,
                 duration: 2,
                 onUpdate: function() {
+                    const currentValue = this.targets()[0].value;
                     if (isPercentage) {
-                        statNumber.textContent = Math.round(this.targets()[0].value) + '%';
-                    } else if (isDecimal) {
-                        statNumber.textContent = this.targets()[0].value.toFixed(1);
+                        statNumber.textContent = Math.round(currentValue) + '%';
+                    } else if (text.includes('.')) {
+                        statNumber.textContent = currentValue.toFixed(1);
                     } else {
-                        statNumber.textContent = Math.round(this.targets()[0].value) + '+';
+                        statNumber.textContent = Math.round(currentValue) + (hasPlus ? '+' : '');
                     }
                 }
             });
