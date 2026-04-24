@@ -1191,7 +1191,7 @@ body::after {
 
     /* Hero Section Mobile */
     .hero {
-        padding: 0 140px;
+        padding: 140px 0;
         min-height: auto;
     }
 
@@ -1488,7 +1488,6 @@ body::after {
 
     /* Hero Mobile Small */
     .hero {
-        padding: 100px 0;
         min-height: auto;
     }
 
