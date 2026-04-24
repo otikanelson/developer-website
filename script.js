@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupScrollAnimations();
     setupInteractiveElements();
     setupProjectBackgrounds();
+    setupScrollToTopButton();
 });
 
 // Setup project card background images
@@ -351,6 +352,28 @@ function setupInteractiveElements() {
     }
 }
 
+// Setup scroll to top button
+function setupScrollToTopButton() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    
+    if (!scrollToTopBtn) return;
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+    
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 // Add scroll-triggered glow effect to navbar
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -360,8 +383,6 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.08)';
     }
 });
-
-// Mobile menu toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 const sidebarOverlay = document.querySelector('.sidebar-overlay');

@@ -37,7 +37,7 @@
 
 html {
     scroll-behavior: smooth;
-    scrollbar-width: 0.4px;
+    scrollbar-width: 1px;
 }
 
 html::-webkit-scrollbar {
@@ -1124,6 +1124,41 @@ body::after {
 .footer p {
     margin: 0.5rem 0;
     opacity: 0.8;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-purple));
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.scroll-to-top.show {
+    display: flex;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
 }
 
 /* Responsive Design */
