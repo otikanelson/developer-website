@@ -37,7 +37,7 @@
 
 html {
     scroll-behavior: smooth;
-    scrollbar-width: none;
+    scrollbar-width: 0.4px;
 }
 
 html::-webkit-scrollbar {
