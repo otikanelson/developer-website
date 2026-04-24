@@ -215,7 +215,7 @@ body::after {
 /* Hero Section */
 .hero {
     position: relative;
-    padding: 160px 0;
+    padding: 200px 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -250,6 +250,7 @@ body::after {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    padding: 80px 0;
 }
 
 .hero-text {
@@ -562,7 +563,7 @@ body::after {
 .masonry-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     grid-auto-rows: 150px;
 }
 
@@ -1147,28 +1148,32 @@ body::after {
     }
 
     .nav-links {
-        display: none;
-        position: absolute;
+        position: fixed;
+        left: -100%;
         top: 70px;
-        left: 0;
-        right: 0;
-        background: rgba(15, 20, 25, 0.98);
         flex-direction: column;
+        background: rgba(15, 20, 25, 0.98);
+        width: 70%;
+        text-align: left;
+        transition: left 0.3s ease;
         gap: 0;
-        border-bottom: 1px solid rgba(0, 212, 255, 0.1);
-        padding: 1rem 0;
+        padding: 2rem 0;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+        border-right: 1px solid rgba(0, 212, 255, 0.1);
         z-index: 9999;
     }
 
     .nav-links.active {
-        display: flex;
+        left: 0;
     }
 
     .nav-links a {
-        padding: 1rem 2rem;
+        padding: 1.25rem 2rem;
         display: block;
         border-bottom: 1px solid rgba(0, 212, 255, 0.05);
         transition: all 0.3s ease;
+        font-size: 1.1rem;
     }
 
     .nav-links a:hover {
@@ -1192,7 +1197,7 @@ body::after {
 
     .hero .container {
         grid-template-columns: 1fr;
-        padding: 0;
+        padding: 40px 0;
         gap: 3rem;
     }
 
@@ -1277,7 +1282,7 @@ body::after {
 
     .masonry-grid {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1.25rem;
+        gap: 2rem;
         grid-auto-rows: 130px;
     }
 
@@ -1590,7 +1595,7 @@ body::after {
 
     .masonry-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 1.5rem;
         grid-auto-rows: 120px;
     }
 

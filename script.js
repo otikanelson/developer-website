@@ -355,11 +355,13 @@ window.addEventListener('scroll', () => {
 // Mobile menu toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
+const sidebarOverlay = document.querySelector('.sidebar-overlay');
 
 if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         menuToggle.classList.toggle('active');
+        sidebarOverlay.classList.toggle('active');
     });
 
     // Close menu when a link is clicked
@@ -367,16 +369,18 @@ if (menuToggle && navLinks) {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
         });
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.navbar')) {
+    // Close menu when clicking overlay
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', () => {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
-        }
-    });
+            sidebarOverlay.classList.remove('active');
+        });
+    }
 }
 
 // Animate elements on page load
