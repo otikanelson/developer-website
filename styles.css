@@ -1199,7 +1199,7 @@ body::after {
 
     .hero .container {
         grid-template-columns: 1fr;
-        padding: 40px 0;
+        padding: 40px 32px;
         gap: 3rem;
     }
 
@@ -1495,6 +1495,7 @@ body::after {
 
     .hero .container {
         gap: 2rem;
+        padding: 0 20px;
     }
 
     .hero-badge {
