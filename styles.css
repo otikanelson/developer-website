@@ -1277,7 +1277,7 @@ body::after {
 
     /* Projects Section Mobile */
     .projects {
-        padding: 0px 0 120px;
+        margin: 0px 0 120px;
     }
 
     .masonry-grid {
