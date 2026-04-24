@@ -215,7 +215,7 @@ body::after {
 /* Hero Section */
 .hero {
     position: relative;
-    padding: 200px 0;
+    padding: 0 30px;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -1191,7 +1191,7 @@ body::after {
 
     /* Hero Section Mobile */
     .hero {
-        padding: 140px 0;
+        padding: 0 140px;
         min-height: auto;
     }
 
@@ -1277,7 +1277,7 @@ body::after {
 
     /* Projects Section Mobile */
     .projects {
-        padding: 120px 0;
+        padding: 0px 0 120px;
     }
 
     .masonry-grid {
