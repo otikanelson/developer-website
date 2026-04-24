@@ -189,10 +189,27 @@ body::after {
     cursor: pointer;
     color: var(--text-white);
     transition: all 0.3s ease;
+    z-index: 10002;
 }
 
 .menu-toggle.active {
     transform: rotate(90deg);
+}
+
+/* Mobile Sidebar */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.sidebar-overlay.active {
+    display: block;
 }
 
 /* Hero Section */
