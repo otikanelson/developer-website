@@ -175,42 +175,10 @@ body {
     align-items: center;
 }
 
-.phone-mockup {
-    position: relative;
-    width: 300px;
-    height: 400px;
-}
-
-.phone {
-    position: absolute;
-    border-radius: 40px;
-    border: 8px solid #000;
-    background: linear-gradient(135deg, #ff1493 0%, #8b008b 100%);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.phone-1 {
-    width: 180px;
-    height: 360px;
-    left: 0;
-    top: 20px;
-    z-index: 1;
-}
-
-.phone-2 {
-    width: 200px;
-    height: 380px;
-    left: 50px;
-    top: 10px;
-    z-index: 2;
-}
-
-.phone-3 {
-    width: 220px;
-    height: 400px;
-    left: 100px;
-    top: 0;
-    z-index: 3;
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* Features Section */
