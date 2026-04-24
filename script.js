@@ -6,7 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeAnimations();
     setupScrollAnimations();
     setupInteractiveElements();
+    setupProjectBackgrounds();
 });
+
+// Setup project card background images
+function setupProjectBackgrounds() {
+    const projectCards = document.querySelectorAll('.project-card[data-bg]');
+    projectCards.forEach(card => {
+        const bgImage = card.getAttribute('data-bg');
+        if (bgImage) {
+            card.style.backgroundImage = `url('${bgImage}')`;
+        }
+    });
+}
 
 // Initialize entrance animations
 function initializeAnimations() {
@@ -26,15 +38,18 @@ function initializeAnimations() {
         });
     });
 
-    // Animate project cards with stagger
+    // Animate project cards with stagger (updated selector)
     const projectCards = document.querySelectorAll('.project-card');
+    
+    // Ensure cards are visible first
+    gsap.set(projectCards, { opacity: 1 });
+    
     gsap.from(projectCards, {
         scrollTrigger: {
-            trigger: '.projects-grid',
+            trigger: '.masonry-grid',
             start: 'top 80%',
             toggleActions: 'play none none none'
         },
-        opacity: 0,
         y: 40,
         duration: 0.6,
         stagger: 0.1
