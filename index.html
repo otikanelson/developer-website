@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soniagon Mobile Studio | Developer Portal</title>
+    <title>Soniagon Studio | Mobile & Web Development</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -16,149 +18,246 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#docs">Documentation</a></li>
-                <li><a href="#api">API</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">Studio</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#skills">Tech</a></li>
+                <li><a href="#contact">Connect</a></li>
             </ul>
             <button class="menu-toggle">☰</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Techy Background -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Soniagon Mobile Studio</h1>
-                <p class="tagline">The Prestigious Games Company</p>
-                <p class="subtitle">Building exceptional mobile experiences since 2012</p>
+        <div class="hero-background" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&h=900&fit=crop')"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">Virtual Mobile Product Studio</div>
+                <h1 class="hero-title">Soniagon</h1>
+                <p class="hero-subtitle">Crafting Digital Excellence</p>
+                <p class="hero-description">Building scalable, user-centric mobile and web applications with clean architecture, modern technologies, and a passion for innovation. Specializing in Android, React Native, and full-stack development.</p>
                 <div class="cta-buttons">
-                    <a href="#docs" class="btn btn-primary">Get Started</a>
-                    <a href="#api" class="btn btn-secondary">API Reference</a>
+                    <a href="#projects" class="btn btn-primary">Explore Our Work</a>
+                    <a href="#contact" class="btn btn-secondary">Start a Project</a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <img src="assets/images/The Prestigious Games Company.png" alt="Soniagon Mobile Studio" class="hero-image">
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Why Choose SKG</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile First</h3>
-                    <p>Optimized for all mobile platforms with cutting-edge performance</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">Projects Delivered</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3>Game Development</h3>
-                    <p>Specialized expertise in creating engaging gaming experiences</p>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Technologies Mastered</span>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>High Performance</h3>
-                    <p>Lightning-fast load times and smooth 60fps gameplay</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Secure & Reliable</h3>
-                    <p>Enterprise-grade security and 99.9% uptime guarantee</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>Developer Tools</h3>
-                    <p>Comprehensive SDKs and APIs for seamless integration</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Analytics</h3>
-                    <p>Real-time insights and detailed performance metrics</p>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Client Satisfaction</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Documentation Section -->
-    <section id="docs" class="documentation">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <h2>Documentation</h2>
-            <div class="docs-grid">
-                <div class="doc-card">
-                    <h3>Getting Started</h3>
-                    <p>Set up your development environment and create your first project in minutes.</p>
-                    <a href="#" class="link">Read Guide →</a>
-                </div>
-                <div class="doc-card">
-                    <h3>SDK Integration</h3>
-                    <p>Integrate SKG SDK into your existing mobile applications.</p>
-                    <a href="#" class="link">View Docs →</a>
-                </div>
-                <div class="doc-card">
-                    <h3>Best Practices</h3>
-                    <p>Learn optimization techniques and industry best practices.</p>
-                    <a href="#" class="link">Explore →</a>
-                </div>
-                <div class="doc-card">
-                    <h3>Troubleshooting</h3>
-                    <p>Common issues and solutions to get you back on track.</p>
-                    <a href="#" class="link">Find Help →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- API Section -->
-    <section id="api" class="api-section">
-        <div class="container">
-            <h2>API Reference</h2>
-            <div class="api-content">
-                <div class="api-overview">
-                    <h3>RESTful API</h3>
-                    <p>Our comprehensive REST API provides access to all SKG services and features.</p>
-                    <div class="code-block">
-                        <pre><code>GET /api/v1/games
-Authorization: Bearer YOUR_API_KEY
-Content-Type: application/json</code></pre>
+            <h2 class="section-title">About Our Studio</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soniagon is a virtual mobile product studio dedicated to building exceptional digital experiences. We specialize in creating scalable, user-centric applications that combine clean architecture with modern design principles.</p>
+                    <p>Our team brings expertise across the full development stack—from native Android and React Native mobile applications to sophisticated full-stack web platforms. We believe in writing code that not only works but is elegant, maintainable, and built to scale.</p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <h4>� Our Focus</h4>
+                            <p>Mobile-first development with cross-platform expertise and scalable architecture</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>� Our Approach</h4>
+                            <p>Clean code, modern tech stack, and user-centric design principles</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>🚀 Our Mission</h4>
+                            <p>Deliver innovative solutions that drive real business value</p>
+                        </div>
                     </div>
                 </div>
-                <div class="api-endpoints">
-                    <h3>Popular Endpoints</h3>
-                    <ul class="endpoint-list">
-                        <li><code>GET /api/v1/games</code> - List all games</li>
-                        <li><code>POST /api/v1/games</code> - Create new game</li>
-                        <li><code>GET /api/v1/users/{id}</code> - Get user profile</li>
-                        <li><code>POST /api/v1/analytics</code> - Submit analytics data</li>
-                        <li><code>GET /api/v1/leaderboards</code> - Fetch leaderboards</li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>FREBFIT</h3>
+                        <span class="project-tag">Android • Java</span>
+                    </div>
+                    <p class="project-description">Comprehensive fitness application featuring category-based workout selection, trainer search, and user engagement tools. Built with Java and Android Studio, providing intuitive interfaces for fitness guidance and workout management.</p>
+                    <div class="project-tech">
+                        <span>Java</span>
+                        <span>Android Studio</span>
+                        <span>UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>SCENORY</h3>
+                        <span class="project-tag">JavaFX • MySQL</span>
+                    </div>
+                    <p class="project-description">Professional-grade storyboarding tool with zoom/pan canvas, drag-and-drop panels, and MySQL persistence. Features drawing tools, color palette, shape creation, and export capabilities with MVC architecture.</p>
+                    <div class="project-tech">
+                        <span>JavaFX</span>
+                        <span>MySQL</span>
+                        <span>MVC Pattern</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>DARB</h3>
+                        <span class="project-tag">React • Node.js • MySQL</span>
+                    </div>
+                    <p class="project-description">Full-stack crowdfunding platform connecting investors with innovative projects. Features campaign management, secure payment integration, user authentication, and data visualization dashboard for investment tracking.</p>
+                    <div class="project-tech">
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>BIZZBRIDGE</h3>
+                        <span class="project-tag">React • Node.js • MongoDB</span>
+                    </div>
+                    <p class="project-description">Business networking platform connecting artisans with customers. Includes role-based authentication, location-based filtering across 26+ craft categories, booking workflows, and admin dashboard for platform management.</p>
+                    <div class="project-tech">
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>VOLAIR</h3>
+                        <span class="project-tag">React Native • TypeScript</span>
+                    </div>
+                    <p class="project-description">Cross-platform mobile application built with React Native and TypeScript. Collaborating with senior developers on feature implementation, testing, and clean architecture design while expanding mobile expertise.</p>
+                    <div class="project-tech">
+                        <span>React Native</span>
+                        <span>TypeScript</span>
+                        <span>Expo</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Artisan Platform</h3>
+                        <span class="project-tag">React • Node.js • MongoDB</span>
+                    </div>
+                    <p class="project-description">Comprehensive web platform for connecting artisans with customers. Features advanced search, location-based filtering, user authentication with role-based access, service portfolio displays, and sophisticated admin dashboard.</p>
+                    <div class="project-tech">
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resources Section -->
-    <section id="resources" class="resources">
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
         <div class="container">
-            <h2>Developer Resources</h2>
-            <div class="resources-grid">
-                <div class="resource-item">
-                    <h4>📚 Code Examples</h4>
-                    <p>Sample projects and code snippets in multiple languages</p>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">Kotlin</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">TypeScript</span>
+                        <span class="skill-badge">HTML/CSS</span>
+                        <span class="skill-badge">SQL</span>
+                    </div>
                 </div>
-                <div class="resource-item">
-                    <h4>🎓 Tutorials</h4>
-                    <p>Step-by-step guides for common development tasks</p>
+
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">React.js</span>
+                        <span class="skill-badge">React Native</span>
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">Express.js</span>
+                        <span class="skill-badge">Next.js</span>
+                        <span class="skill-badge">Nest.js</span>
+                    </div>
                 </div>
-                <div class="resource-item">
-                    <h4>💬 Community</h4>
-                    <p>Join our developer community and get support</p>
+
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">Android Studio</span>
+                        <span class="skill-badge">Git/GitHub</span>
+                        <span class="skill-badge">VS Code</span>
+                        <span class="skill-badge">Postman</span>
+                        <span class="skill-badge">MongoDB</span>
+                        <span class="skill-badge">Firebase</span>
+                    </div>
                 </div>
-                <div class="resource-item">
-                    <h4>🔗 SDKs</h4>
-                    <p>Download SDKs for iOS, Android, and Web platforms</p>
+
+                <div class="skill-category">
+                    <h3>Core Concepts</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">RESTful APIs</span>
+                        <span class="skill-badge">JWT Auth</span>
+                        <span class="skill-badge">SDLC</span>
+                        <span class="skill-badge">Data Structures</span>
+                        <span class="skill-badge">UI/UX Design</span>
+                        <span class="skill-badge">Clean Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Expertise</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Freelance Software Development</h3>
+                        <p class="timeline-date">January 2025 - March 2025</p>
+                        <p>Collaborated with multiple clients to design and develop comprehensive IT software solutions. Architected web platforms with advanced search, location-based filtering, and booking management systems. Achieved 83% average project success rate.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Mobile Application Development Internship</h3>
+                        <p class="timeline-date">January 2024 - July 2024</p>
+                        <p>Worked under senior developers gaining hands-on experience with data structures, database management, and collaborative development. Designed JavaFX paint application, train booking app UI, and fitness application with interactive features.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Full-Stack Development & University Projects</h3>
+                        <p class="timeline-date">January 2022 - 2025</p>
+                        <p>Developed responsive websites using HTML, CSS, and JavaScript. Built Android crowdfunding application with secure payment integration. Collaborated on multiple school projects focusing on clean architecture and user experience.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,24 +266,52 @@ Content-Type: application/json</code></pre>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get in Touch</h2>
+            <h2 class="section-title">Let's Build Something Great</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><strong>Email:</strong> developers@skg.studio</p>
-                    <p><strong>Support:</strong> support@skg.studio</p>
-                    <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                    <h3>Start Your Project</h3>
+                    <p>We're always interested in hearing about new projects and opportunities. Whether you need a mobile app, web platform, or full-stack solution, let's connect.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">�</span>
+                            <div>
+                                <p class="contact-label">Services</p>
+                                <p>Mobile Development • Web Development • Full-Stack Solutions</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🎯</span>
+                            <div>
+                                <p class="contact-label">Expertise</p>
+                                <p>React Native • Android • React.js • Node.js • Full-Stack</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">�</span>
+                            <div>
+                                <p class="contact-label">Approach</p>
+                                <p>Clean Architecture • Scalable Design • User-Centric Development</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="social-links">
-                        <a href="#" class="social-icon">Twitter</a>
-                        <a href="#" class="social-icon">GitHub</a>
-                        <a href="#" class="social-icon">Discord</a>
+                        <a href="https://linkedin.com" target="_blank" class="social-link">LinkedIn</a>
+                        <a href="https://github.com" target="_blank" class="social-link">GitHub</a>
+                        <a href="https://twitter.com" target="_blank" class="social-link">Twitter</a>
                     </div>
                 </div>
                 <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Project Name" required>
                     <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <select required>
+                        <option value="">Select Project Type</option>
+                        <option value="mobile">Mobile App</option>
+                        <option value="web">Web Application</option>
+                        <option value="fullstack">Full-Stack Solution</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea placeholder="Tell us about your project" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Inquiry</button>
                 </form>
             </div>
         </div>
@@ -193,8 +320,8 @@ Content-Type: application/json</code></pre>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Soniagon Mobile Studio. All rights reserved.</p>
-            <p>Creative Studio since 2012</p>
+            <p>&copy; 2025 Soniagon Studio. All rights reserved.</p>
+            <p>Building scalable mobile & web solutions | Virtual Product Studio</p>
         </div>
     </footer>
 
