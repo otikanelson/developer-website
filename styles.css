@@ -270,7 +270,6 @@ body::after {
 .hero-title-group {
     display: flex;
     align-items: baseline;
-    gap: 1rem;
     margin-bottom: 1.5rem;
     opacity: 0;
     animation: slideInUp 0.8s ease 0.1s forwards;

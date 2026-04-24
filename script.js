@@ -158,13 +158,20 @@ function setupScrollAnimations() {
             const isPercentage = text.includes('%');
             const hasPlus = text.includes('+');
             
-            // Extract the numeric value by removing non-numeric characters except decimal point
-            let numericText = text.replace(/[^0-9.]/g, '');
-            let endValue = parseFloat(numericText);
+            // Extract the numeric value
+            let endValue = 0;
             
-            // Handle edge cases
-            if (isNaN(endValue)) endValue = 0;
-            if (isPercentage) endValue = 100;
+            if (isPercentage) {
+                endValue = 100;
+            } else if (hasPlus) {
+                // Extract number before the +
+                const match = text.match(/(\d+)/);
+                endValue = match ? parseInt(match[1]) : 10;
+            } else {
+                // Try to parse as decimal
+                const match = text.match(/(\d+\.?\d*)/);
+                endValue = match ? parseFloat(match[1]) : 0;
+            }
 
             gsap.from({ value: 0 }, {
                 scrollTrigger: {
