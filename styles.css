@@ -108,6 +108,8 @@ body::after {
     padding: 0 64px;
     position: relative;
     z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Navigation */
